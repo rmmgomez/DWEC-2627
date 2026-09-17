@@ -1,4 +1,5 @@
 "use strict";
+
 let a = new Array(); // Crea un array vacío
 a[0] = 13; // Asigna la primera posición del array
 console.log(a.length); // Imprime 1
@@ -18,7 +19,7 @@ console.log(a); // Imprime ["A", "B", "C", "a", "b", "c", "d"]
 console.log(a.pop()); // Imprime y elimina la última posición → "d"
 console.log(a.shift()); // Imprime y elimina la primera posición → "A"
 console.log(a); // Imprime ["B", "C", "a", "b", "c"]
-
+a.length = 2; // Con esto mofifico la longitud del array directamente, pasarán a ser borradas (undefine) el resto
 
 
 let  a = ["a", "b", "c", "d", "e", "f"];
