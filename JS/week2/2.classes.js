@@ -21,19 +21,19 @@ class User {
     constructor(name) {
         this.#name = name;
     }
-    getName() { // Getter
+    get name() { // Getter
         return this.#name;
     }
 
-    setName(name) { // Setter
+    set name(name) { // Setter
         this.#name = name;
     }
 }
 
 let user = new User("john");
 // console.log(u.#name); // ERROR: Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
-user.setName("Alex");
-console.log(user.getName()); // Alex
+user.name = "Alex";
+console.log(user.name); // Alex
 
 class Empleado {
     static #sueldoMinimo = 15000;
