@@ -1,3 +1,5 @@
+// Desestructuración de objetos
+ 
 let usuario = {
     id: 3,
     nombre: "Pedro",
@@ -18,7 +20,7 @@ function imprimirUsuario({id, nombre, email}, otraInfo = "Nada") {
 
 imprimirUsuario(usuario, "Es muy listo");
 
-console.log("---- Spread ----");
+console.log("---- Spread... ----");
 
 function configGame(options) {
     let defaults = {
@@ -51,7 +53,7 @@ const coche = {
 const cilindros = coche?.motor?.cilindros;
 console.log(cilindros); // undefined (no hay error)
 
-/* const usuarios = [
+ const usuarios = [
   { nombre: 'Ana' },
   { nombre: 'Luis' }
 ];
@@ -60,7 +62,7 @@ const primerUsuario = usuarios?.[0]?.nombre;
 const cuartoUsuario = usuarios?.[3]?.nombre ?? "Juanito";
 
 console.log(primerUsuario); // "Ana"
-console.log(cuartoUsuario); // undefined
+console.log(cuartoUsuario); // undefined --> Juanito
 
 const persona = {
   nombre: 'Carlos',
@@ -85,4 +87,4 @@ const configuracion = {
 
 const temaActual = configuracion.tema?.color ?? 'claro'; // configuracion.tema devuelve "undefined"
 
-console.log(temaActual); // "claro" */
+console.log(temaActual); // "claro" 
