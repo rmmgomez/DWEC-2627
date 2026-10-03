@@ -22,3 +22,4 @@ div3.addEventListener("click", divClick);
 /* div1.addEventListener("click", divClick, true);
 div2.addEventListener("click", divClick, true);
 div3.addEventListener("click", divClick, true); */
+ 

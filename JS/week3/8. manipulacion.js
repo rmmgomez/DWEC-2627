@@ -3,7 +3,7 @@
 
 // Es lo mismo que arriba
 let li3 = document.querySelector("ul > li:nth-child(3)");
-console.log(li3);
+console.log(li3.textContent);
 
 let newLi3 = document.createElement("li"); // Crea un nuevo elemento de lista
 newLi3.innerText = "Now I'm the third element"; // Y le asigna un texto

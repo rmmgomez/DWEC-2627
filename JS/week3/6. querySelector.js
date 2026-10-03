@@ -1,8 +1,8 @@
-/* console.log(document.querySelector("#div1 a").title); // Imprime "hello world"
+console.log(document.querySelector("#div1 a").title); // Imprime "hello world"
 console.log(document.querySelector("#div1 > a").title); // null (no hay 'a' hijo de #div1)
 console.log(document.querySelector(".normalLink[title^='bye']").title); // Imprime "bye world"
 console.log(document.querySelector(".normalLink[title^='bye'] + a").title); // Imprime "hello again"
- */
+ 
 /* let elems = document.querySelectorAll(".normalLink");
 elems.forEach((elem) => { // Imprime "hello world" y "bye world"
     console.log(elem.title);
