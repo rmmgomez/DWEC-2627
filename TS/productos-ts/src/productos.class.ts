@@ -12,7 +12,7 @@ export class ProductoService {
   async getProductos(): Promise<Product[]> {
     const resp = await this.#http.get<ProductsResponse>(`${SERVER}/products`);
     return resp.products;
-  }
+  } 
 
   async add(product: Product): Promise<Product> {
     const resp = await this.#http.post<SingleProductResponse, Product>(`${SERVER}/products`, product);
