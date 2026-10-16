@@ -1,6 +1,8 @@
 import type { Product } from "./interfaces/product.js";
 import { ProductoService } from "./productos.class.js";
-const plantilla = document.getElementById("card-template") as HTMLTemplateElement;
+const plantilla = document.getElementById(
+  "card-template"
+) as HTMLTemplateElement;
 const gridContainer = document.querySelector(".grid-container");
 const formulario = document.getElementById("formProducto") as HTMLFormElement;
 const imgPreview = document.getElementById("imgPreview") as HTMLImageElement;
@@ -9,21 +11,33 @@ getProductos();
 
 async function getProductos() {
   const productos = await pService.getProductos();
-  productos.forEach(p =>  mostrarProducto(p));
+  productos.forEach(p => mostrarProducto(p));
 }
 
 function mostrarProducto(producto: Product) {
-  const card = (plantilla.content.cloneNode(true)as DocumentFragment).firstElementChild ;
-  (card!.querySelector("img") as HTMLImageElement).src=producto.imageUrl;
-  (card!.querySelector(".card-price") as HTMLElement).append(new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(producto.price));
-  (card!.querySelector(".card-description") as HTMLElement).append(producto.description);
-  (card!.querySelector(".card-footer.card-available") as HTMLElement).append(new Intl.DateTimeFormat("es-ES", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  }).format(new Date(producto.available!)));
-  
-  (card!.querySelector(".btn.btn-danger") as HTMLButtonElement).addEventListener("click", async (e: Event) => {
+  const card = (plantilla.content.cloneNode(true) as DocumentFragment)
+    .firstElementChild;
+  (card!.querySelector("img") as HTMLImageElement).src = producto.imageUrl;
+  (card!.querySelector(".card-price") as HTMLElement).append(
+    new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "EUR",
+    }).format(producto.price)
+  );
+  (card!.querySelector(".card-description") as HTMLElement).append(
+    producto.description
+  );
+  (card!.querySelector(".card-footer.card-available") as HTMLElement).append(
+    new Intl.DateTimeFormat("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(new Date(producto.available!))
+  );
+
+  (
+    card!.querySelector(".btn.btn-danger") as HTMLButtonElement
+  ).addEventListener("click", async (e: Event) => {
     e.preventDefault();
     try {
       await pService.delete(producto.id!);
@@ -36,17 +50,17 @@ function mostrarProducto(producto: Product) {
   gridContainer!.append(card!);
 }
 
-formulario.addEventListener("submit", (e) => {
+formulario.addEventListener("submit", e => {
   e.preventDefault();
   addProducto();
 });
 
 async function addProducto() {
   const producto: Product = {
-      description: formulario.description.value,
-      price: +formulario.price.value,
-      imageUrl: imgPreview.src
-    };
+    description: formulario.description.value,
+    price: +formulario.price.value,
+    imageUrl: imgPreview.src,
+  };
 
   try {
     const p = await pService.add(producto);
@@ -59,7 +73,7 @@ async function addProducto() {
   }
 }
 
-formulario.image.addEventListener("change", (e: Event) => {
+formulario.image.addEventListener("change", () => {
   const file = formulario.image.files[0];
   const reader = new FileReader();
 

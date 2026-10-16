@@ -1,9 +1,9 @@
 import type { Product } from "./product";
 
 export interface ProductsResponse {
-    products: Product[];
+  products: Product[];
 }
 
 export interface SingleProductResponse {
-    product: Product;
+  product: Product;
 }
