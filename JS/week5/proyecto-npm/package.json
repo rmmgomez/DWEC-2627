@@ -1,0 +1,28 @@
+{
+  "name": "proyecto-npm",
+  "version": "1.0.0",
+  "description": "Proyecto de ejemplo con npm. No lo usaremos",
+  "keywords": [
+    "nouso"
+  ],
+  "license": "ISC",
+  "author": "Rosa Medina",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "echo 'We are going to make some tests'",
+    "start": "lite-server",
+    "test": "eslint index.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "dayjs": "^1.11.23"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "lite-server": "^2.6.1",
+    "prettier": "^3.9.10"
+  }
+}
